@@ -1,5 +1,5 @@
 # 关系数据库设计及表间的基本关系
-![图片alt](https://github.com/panyinglang/First-Learning/raw/master/DataBase Learning/image/20190301081657.png ''图片title'')
+![图片alt](https://github.com/panyinglang/First-Learning/raw/master/image/20190301081657.png ''图片title'')
 ![图片alt](image/20190301082045.png ''图片title'')
 ![图片alt](image/20190301082248.png ''图片title'')
 ![图片alt](image/20190301082421.png ''图片title'')
