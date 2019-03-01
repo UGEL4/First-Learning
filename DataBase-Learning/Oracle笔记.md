@@ -1,43 +1,43 @@
-# å…³ç³»æ•°æ®åº“è®¾è®¡åŠè¡¨é—´çš„åŸºæœ¬å…³ç³»
-![å›¾ç‰‡alt](https://github.com/panyinglang/First-Learning/raw/master/image/20190301081657.png ''å›¾ç‰‡title'')
-![å›¾ç‰‡alt](image/20190301082045.png ''å›¾ç‰‡title'')
-![å›¾ç‰‡alt](image/20190301082248.png ''å›¾ç‰‡title'')
-![å›¾ç‰‡alt](image/20190301082421.png ''å›¾ç‰‡title'')
-![å›¾ç‰‡alt](image/20190301082515.png ''å›¾ç‰‡title'')
+# ¹ØÏµÊı¾İ¿âÉè¼Æ¼°±í¼äµÄ»ù±¾¹ØÏµ
+![Í¼Æ¬alt](https://github.com/panyinglang/First-Learning/raw/master/DataBase-Learning/image/20190301081657.png ''Í¼Æ¬title'')
+![Í¼Æ¬alt](image/20190301082045.png ''Í¼Æ¬title'')
+![Í¼Æ¬alt](image/20190301082248.png ''Í¼Æ¬title'')
+![Í¼Æ¬alt](image/20190301082421.png ''Í¼Æ¬title'')
+![Í¼Æ¬alt](image/20190301082515.png ''Í¼Æ¬title'')
 
-# ä¸€.å•è¡¨æŸ¥è¯¢
+# Ò».µ¥±í²éÑ¯
 
-## -- æŸ¥è¯¢å‘˜å·¥è¡¨æ‰€æœ‰ä¿¡æ¯
+## -- ²éÑ¯Ô±¹¤±íËùÓĞĞÅÏ¢
 `select * from s_emp;`
 
-## -- æŸ¥è¯¢å‘˜å·¥å§“åå’Œå·¥èµ„
+## -- ²éÑ¯Ô±¹¤ĞÕÃûºÍ¹¤×Ê
 `select first_name,salary from s_emp;`
 
-## -- æŸ¥è¯¢å·¥èµ„è¶…è¿‡1200çš„å‘˜å·¥,å¹¶ä¸”æŒ‰ç…§é™åºæ’åˆ—
+## -- ²éÑ¯¹¤×Ê³¬¹ı1200µÄÔ±¹¤,²¢ÇÒ°´ÕÕ½µĞòÅÅÁĞ
 ```
 select first_name,salary from s_emp where salary>1200
 order by 2 desc;
 ```
 
-## -- æŸ¥è¯¢å…¬å¸å‘˜å·¥çš„å¹´è–ª(+ææˆ)å¹¶ä¸”æŒ‰ç…§é™åºæ’åˆ—
+## -- ²éÑ¯¹«Ë¾Ô±¹¤µÄÄêĞ½(+Ìá³É)²¢ÇÒ°´ÕÕ½µĞòÅÅÁĞ
 ```
 select first_name,salary*12*(1+nvl(commission_pct/100,0)) from s_emp
 order by 2 desc;
 ```
 
-## -- æŸ¥è¯¢å…¬å¸å¹³å‡å·¥èµ„
+## -- ²éÑ¯¹«Ë¾Æ½¾ù¹¤×Ê
 `select avg(salary) from s_emp;`
 
-## -- æŸ¥è¯¢å„ä¸ªéƒ¨é—¨çš„å¹³å‡å·¥èµ„
-`select dept_id éƒ¨é—¨ç¼–å·,avg(salary) å¹³å‡å·¥èµ„ from s_emp group by dept_id;`
+## -- ²éÑ¯¸÷¸ö²¿ÃÅµÄÆ½¾ù¹¤×Ê
+`select dept_id ²¿ÃÅ±àºÅ,avg(salary) Æ½¾ù¹¤×Ê from s_emp group by dept_id;`
 
-## -- æŸ¥è¯¢å·¥èµ„è¶…è¿‡bençš„å‘˜å·¥ä¿¡æ¯
+## -- ²éÑ¯¹¤×Ê³¬¹ıbenµÄÔ±¹¤ĞÅÏ¢
 ```
 select * from s_emp where salary >
 (select salary from s_emp where first_name='Ben');
 ```
 
-## -- æŸ¥è¯¢å’ŒbenåŒéƒ¨é—¨çš„å‘˜å·¥
+## -- ²éÑ¯ºÍbenÍ¬²¿ÃÅµÄÔ±¹¤
 ```
 select * from s_emp where dept_id = 
 (select dept_id from s_emp where first_name = 'Ben')
@@ -45,39 +45,39 @@ and first_name <> 'Ben';
 ```
 
 
-# äºŒ.å¤šè¡¨æŸ¥è¯¢
+# ¶ş.¶à±í²éÑ¯
 
-## --æŸ¥è¯¢å‡ºå‘˜å·¥çš„åå­—å’Œä»–æ‰€åœ¨éƒ¨é—¨çš„åå­—
+## --²éÑ¯³öÔ±¹¤µÄÃû×ÖºÍËûËùÔÚ²¿ÃÅµÄÃû×Ö
 ```
 select e.first_name,d.name from s_emp e join s_dept d
 on e.dept_id=d.id;
 ```
 
-## --æŸ¥è¯¢å‡ºéƒ¨é—¨åä»¥åŠå®ƒæ‰€åœ¨çš„åŒºåŸŸåç§°
+## --²éÑ¯³ö²¿ÃÅÃûÒÔ¼°ËüËùÔÚµÄÇøÓòÃû³Æ
 ```
 select d.name,r.name from s_dept d join s_region r
 on d.region_id=r.id;
 ```
 
-## --æŸ¥è¯¢å‡º'Sales'éƒ¨é—¨çš„æ‰€æœ‰å‘˜å·¥çš„åå­—å’Œå·¥èµ„
+## --²éÑ¯³ö'Sales'²¿ÃÅµÄËùÓĞÔ±¹¤µÄÃû×ÖºÍ¹¤×Ê
 ```
 select e.first_name,e.salary,d.name from s_emp e join s_dept d
 on e.dept_id=d.id where d.name='Sales';
 ```
 
-## --æŸ¥è¯¢å‡ºè®¾åœ¨Asiaçš„éƒ¨é—¨å
+## --²éÑ¯³öÉèÔÚAsiaµÄ²¿ÃÅÃû
 ```
 select d.name,r.name from s_dept d join s_region r
 on d.region_id=r.id where r.name='Asia';
 ```
 
-## --æŸ¥è¯¢å‡ºåå­—å«Unisportsçš„å®¢æˆ·è®¢å•çš„ä¿¡æ¯
+## --²éÑ¯³öÃû×Ö½ĞUnisportsµÄ¿Í»§¶©µ¥µÄĞÅÏ¢
 ```
 select c.name,o.* from s_customer c join s_ord o
 on o.customer_id=c.id where c.name='Unisports';
 ```
 
-## --æŸ¥è¯¢å‡ºè®¾åœ¨Asiaå·¥ä½œçš„å‘˜å·¥å,å·¥èµ„,èŒç§°
+## --²éÑ¯³öÉèÔÚAsia¹¤×÷µÄÔ±¹¤Ãû,¹¤×Ê,Ö°³Æ
 ```
 select e.first_name,e.salary,e.title,r.name from s_emp e
 join s_dept d on e.dept_id=d.id
@@ -85,94 +85,94 @@ join s_region r on d.region_id=r.id
 where r.name='Asia';
 ```
 
-## --æŸ¥è¯¢å‡ºå®¢æˆ·ååŠå®ƒçš„è®¢å•å·,æ€»è´¹ç”¨
+## --²éÑ¯³ö¿Í»§Ãû¼°ËüµÄ¶©µ¥ºÅ,×Ü·ÑÓÃ
 ```
 select c.name,o.id,o.total from s_customer c left join s_ord o
 on o.customer_id=c.id;
 ```
 
-## --æŸ¥è¯¢å‡ºä¸‹å±å’Œä»–ç›´æ¥ä¸Šå¸
+## --²éÑ¯³öÏÂÊôºÍËûÖ±½ÓÉÏË¾
 ```
-select e.first_name ä¸‹å±å,m.first_name from s_emp e left join s_emp m
+select e.first_name ÏÂÊôÃû,m.first_name from s_emp e left join s_emp m
 on e.manager_id=m.id;
 ```
 
-## --æ‰¾å‡ºOperationséƒ¨é—¨å·¥ä½œçš„å‘˜å·¥å,å·¥èµ„,å¹¶ä¸”æŒ‰ç…§å·¥èµ„é™åºæ’åˆ—
+## --ÕÒ³öOperations²¿ÃÅ¹¤×÷µÄÔ±¹¤Ãû,¹¤×Ê,²¢ÇÒ°´ÕÕ¹¤×Ê½µĞòÅÅÁĞ
 ```
 select e.first_name,e.salary,d.name from s_emp e join s_dept d
 on e.dept_id=d.id where d.name='Operations' order by 2 desc;
 ```
 
-## --æŸ¥è¯¢å‡ºå„ä¸ªåŒºåŸŸåå’Œè®¾åœ¨æ­¤åŒºåŸŸçš„éƒ¨é—¨æ•°é‡
+## --²éÑ¯³ö¸÷¸öÇøÓòÃûºÍÉèÔÚ´ËÇøÓòµÄ²¿ÃÅÊıÁ¿
 ```
-select r.name åŒºåŸŸå,count(d.id) éƒ¨é—¨æ•°é‡ from s_region r left join s_dept d on 
+select r.name ÇøÓòÃû,count(d.id) ²¿ÃÅÊıÁ¿ from s_region r left join s_dept d on 
 d.region_id=r.id group by r.name;
 ```
 
-## --æŸ¥è¯¢å‡ºå®¢æˆ·ååŠå®¢æˆ·çš„è®¢å•æ•°
+## --²éÑ¯³ö¿Í»§Ãû¼°¿Í»§µÄ¶©µ¥Êı
 ```
 select c.name,count(o.id) from s_customer c left join s_ord o
 on o.customer_id=c.id group by c.name;
 ```
 
-## --æŸ¥è¯¢å‡ºè®¢å•æ•°è¶…è¿‡ä¸€ä¸ªçš„å®¢æˆ·
+## --²éÑ¯³ö¶©µ¥Êı³¬¹ıÒ»¸öµÄ¿Í»§
 ```
 select c.name,count(o.id) from s_customer c join s_ord o
 on o.customer_id=c.id group by c.name having count(o.id)>1;
 ```
 
-## --æŸ¥è¯¢å‡ºå¹³å‡å·¥èµ„è¶…è¿‡1300çš„éƒ¨é—¨ç¼–å·
+## --²éÑ¯³öÆ½¾ù¹¤×Ê³¬¹ı1300µÄ²¿ÃÅ±àºÅ
 ```
 select dept_id,avg(salary) from s_emp group by dept_id
 having avg(salary)>1300;
 ```
 
-## --æŸ¥è¯¢å‡ºå·¥èµ„è¶…è¿‡1200çš„å„éƒ¨é—¨å‘˜å·¥æ•°é‡
+## --²éÑ¯³ö¹¤×Ê³¬¹ı1200µÄ¸÷²¿ÃÅÔ±¹¤ÊıÁ¿
 `select dept_id,count(id) from s_emp where salary>1200 group by dept_id;`
 
-## --æŸ¥è¯¢å‡ºäººæ•°è¶…è¿‡3ä¸ªå‘˜å·¥çš„éƒ¨é—¨ç¼–å·å’Œéƒ¨é—¨åç§°
+## --²éÑ¯³öÈËÊı³¬¹ı3¸öÔ±¹¤µÄ²¿ÃÅ±àºÅºÍ²¿ÃÅÃû³Æ
 ```
 select d.id,d.name,count(e.id) from s_emp e join s_dept d
 on e.dept_id=d.id group by d.id,d.name having count(e.id)>3;
 ```
 
-## --æ‰¾å‡ºå„ä¸ªéƒ¨é—¨ä¸­å¤§äºä»–æ‰€åœ¨éƒ¨é—¨å¹³å‡å·¥èµ„çš„å‘˜å·¥åå’Œå·¥èµ„
+## --ÕÒ³ö¸÷¸ö²¿ÃÅÖĞ´óÓÚËûËùÔÚ²¿ÃÅÆ½¾ù¹¤×ÊµÄÔ±¹¤ÃûºÍ¹¤×Ê
 ```
 select e1.first_name,e1.salary,e1.dept_id from s_emp e1
 where e1.salary >
 (select avg(e2.salary) from s_emp e2 where e2.dept_id = e1.dept_id);
 ```
 
-## --æ‰¾å‡ºèŒç§°ç›¸åŒçš„å‘˜å·¥
+## --ÕÒ³öÖ°³ÆÏàÍ¬µÄÔ±¹¤
 ```
 select * from s_emp where title 
 in(select title from s_emp group by title having count(*)>=2);
 ```
 
-## --æŸ¥è¯¢æœ¬å…¬å¸å·¥èµ„å‰ä¸‰çš„å‘˜å·¥
-### --é”™è¯¯:å¦‚æœå‡ºç°ä¸¤ä¸ªå¹¶åˆ—ç¬¬ä¸‰,åˆ™ç»“æœæœ‰è¯¯
+## --²éÑ¯±¾¹«Ë¾¹¤×ÊÇ°ÈıµÄÔ±¹¤
+### --´íÎó:Èç¹û³öÏÖÁ½¸ö²¢ÁĞµÚÈı,Ôò½á¹ûÓĞÎó
 ```
 select * from (select * from s_emp order by salary desc)
 where rownum<=3;
 ```
 
-### --æ­£ç¡®æ€è·¯:æ¯”'æˆ‘'å·¥èµ„é«˜çš„äººä¸è¶…è¿‡3ä¸ª
+### --ÕıÈ·Ë¼Â·:±È'ÎÒ'¹¤×Ê¸ßµÄÈË²»³¬¹ı3¸ö
 ?
 
-## --æŸ¥è¯¢å‡ºå„ä¸ªéƒ¨é—¨å·¥èµ„æœ€é«˜çš„å‘˜å·¥
-### --æ€è·¯:éƒ¨é—¨ä¸­æ¯”'æˆ‘'å·¥èµ„é«˜çš„äººä¸å­˜åœ¨
+## --²éÑ¯³ö¸÷¸ö²¿ÃÅ¹¤×Ê×î¸ßµÄÔ±¹¤
+### --Ë¼Â·:²¿ÃÅÖĞ±È'ÎÒ'¹¤×Ê¸ßµÄÈË²»´æÔÚ
 ```
 select dept_id,salary from s_emp e1
 where not exists(select 1 from s_emp e2 where e2.dept_id=e1.dept_id
 and e2.salary>e1.salary);
 ```
 --------------------------------------------------------------------------------
-x + y + z = ä»Šå¤©çš„æ—¥æœŸ(?)
+x + y + z = ½ñÌìµÄÈÕÆÚ(?)
 x * y * z = 36
-æœ€å°çš„å­©å­æ˜¯çº¢å¤´å‘
+×îĞ¡µÄº¢×ÓÊÇºìÍ··¢
 --------------------------------------------------------------------------------
 
-## åˆ†é¡µ
+## ·ÖÒ³
 
 ```
 1.MYSQL
@@ -189,15 +189,15 @@ select * from s_emp
 ```
 --------------------------------------------------------------------------------
 
-## é›†åˆæ“ä½œ
+## ¼¯ºÏ²Ù×÷
 
-### --åˆ é™¤åºåˆ—
+### --É¾³ıĞòÁĞ
 `drop sequence t_test_id;`
-### --åˆ›å»ºåºåˆ—(ä»5å¼€å§‹)
+### --´´½¨ĞòÁĞ(´Ó5¿ªÊ¼)
 `create sequence t_test_id start with 5;`
-### --åˆ é™¤è¡¨æ ¼
+### --É¾³ı±í¸ñ
 `drop table t_test;`
-### --åˆ›å»ºè¡¨æ ¼
+### --´´½¨±í¸ñ
 ```
 create table t_test(
 id		number(7),
@@ -207,47 +207,47 @@ constraint t_test_name_nn check(name is not null),
 constraint t_test_name_uq unique(name)
 );
 ```
-### --æ·»åŠ æ•°æ®
+### --Ìí¼ÓÊı¾İ
 ```
 insert into t_test values(1,'AA');
 insert into t_test values(2,'BB');
 insert into t_test values(3,'CC');
 insert into t_test values(4,'DD');
 ```
-### --æäº¤
+### --Ìá½»
 `commit;`
 
 
-### MINUS		å·®é›†
+### MINUS		²î¼¯
 ```
 select * from t_test where id in(1,3,5)
 minus
 select * from t_test where id in(2,3,5);
 ```
-ç»“æœ:1
+½á¹û:1
 
 
-### INTERSECT	äº¤é›†
+### INTERSECT	½»¼¯
 ```
 select * from t_test where id in(1,3,5)
 intersect	
 select * from t_test where id in(2,3,5);
 ```
-ç»“æœ:3,5
+½á¹û:3,5
 
 
-### UNION		å¹¶é›†(å»é‡)
+### UNION		²¢¼¯(È¥ÖØ)
 ```
 select * from t_test where id in(1,3,5)
 union
 select * from t_test where id in(2,3,5);
 ```
-ç»“æœ:1,2,3,5
+½á¹û:1,2,3,5
 
-### UNION ALL	å¹¶é›†
+### UNION ALL	²¢¼¯
 ```
 select * from t_test where id in(1,3,5)
 minus
 select * from t_test where id in(2,3,5);
 ```
-ç»“æœ:1,2,3,3,5,5
+½á¹û:1,2,3,3,5,5
